@@ -1,18 +1,18 @@
-COFFEE 	= $(shell find lib -name "*.coffee") index.coffee
-JS 			= $(COFFEE:.coffee=.js)
+all: node_modules lib lib/index.js lib/style.css
 
-STYL 	= $(shell find lib -name "*.styl")
-CSS 	= $(STYL:.styl=.css)
+node_modules: package.json
+	@npm install
 
-build: $(CSS) $(JS)
+lib:
+	@mkdir -p lib
 
-%.css: %.styl
-	stylus -u nib $<
+lib/index.js: src/index.coffee
+	coffee -bcj $@ $<
 
-%.js: %.coffee
-	coffee -bc $<
+lib/style.css: src/style.styl
+	stylus -u nib --compress < $< > $@
 
 clean:
-	rm -rf $(CSS) $(JS)
+	@rm -rf lib
 
 .PHONY: clean
