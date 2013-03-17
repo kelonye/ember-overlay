@@ -1,0 +1,12 @@
+{
+  "name": "ember-overlay",
+  "version": "0.0.1",
+  "description": "Overlay component",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "*",
+    "coffee-script": "*",
+    "component": "*",
+    "nib": "*"
+  }
+}
