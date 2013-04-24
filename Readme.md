@@ -3,7 +3,7 @@
 Usage
 ----------
 
-See [demo](http://kelonye.github.com/#/pages/overlay)
+See [demo](http://kelonye.github.com/ember-overlay/example/index.html)
 
 javascript
 
@@ -12,9 +12,9 @@ javascript
 App.OverlayView = Em.View.extend()
 
 # view to handle mouse click event
-App.View = Em.View  require("ember-overlay"),
+App.View = Em.View require("ember-overlay"),
   # specify the overlay view
-  overlayViewClass: App.OverlayView
+  overlay: App.OverlayView
 ```
 
 License

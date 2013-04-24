@@ -1,58 +1,62 @@
-get = Em.get
-set = Em.set
+require 'ember'
 
 module.exports = Em.Mixin.create
-
-  click: (e)->
-
+  didInsertElement: ->
     @_super()
-    
-    # destroy existing overlay
-    Em.$(".component.overlay").remove()
+    @$().on 'click', show.bind @
 
-    # close view btn
-    closeView = Em.View.create
-      template: Em.Handlebars.compile "✘"
-      classNames: [
-        "close"
-      ]
-      click: ->
-        parentView = get @, "parentView"
-        parentView.destroy()
+# fn to close overlay
+hide = (e) ->
+  parentView = @get 'parentView'
+  parentView.destroy()
 
-    # content view
-    contentView = get( @, "overlayViewClass" ).create
-      classNames: [
-        "content"
-      ]
+# fn to show overlay
+show = (e) ->
+
+  # destroy existing overlay
+  Em.$('.component.overlay').remove()
+
+  # close view btn
+  closeView = Em.View.create
+    template: Em.Handlebars.compile '✘'
+    classNames: ['close']
+    didInsertElement: ->
+      #@_super()
+      @$().on 'click', hide.bind @
+
+  # content view
+  contentView = @get('overlay').create
+    classNames: [
+      'content'
+    ]
 
 
-    overlayView = Em.ContainerView.create
-      classNames: [
-        "component"
-        "overlay"
-      ]
-      childViews: [
-        "closeView"
-        "contentView"
-      ]
+  overlayView = Em.ContainerView.create
+    classNames: [
+      'component'
+      'overlay'
+    ]
+    childViews: [
+      'closeView'
+      'contentView'
+    ]
 
-      closeView: closeView
-      contentView: contentView
+    closeView: closeView
+    contentView: contentView
 
-    parentView = get @, "parentView"
-    overlayView.append()
+  parentView = @get 'parentView'
+  overlayView.append()
 
-    Em.run.next ->
+  Em.run.next ->
 
-      el = overlayView.$()
-      width = el.width()
+    el = overlayView.$()
+    width = el.width()
 
-      offset = width/2
+    offset = width/2
 
-      left = e.pageX - offset
-      top = e.pageY
+    left = e.pageX - offset
+    top = e.pageY
 
-      el.css
-        top: "#{top}px"
-        left: "#{left}px"
+    el.css
+      top: "#{top}px"
+      left: "#{left}px"
