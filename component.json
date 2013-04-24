@@ -1,5 +1,6 @@
 {
   "name": "ember-overlay",
+  "repo": "kelonye/ember-overlay",
   "version": "0.0.1",
   "description": "Overlay component",
   "license": "MIT",
