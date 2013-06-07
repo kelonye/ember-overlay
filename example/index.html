@@ -1,22 +1,40 @@
-<!DOCTYPE html><html><head><link href="../build/build.css" rel="stylesheet" media="screen"></head><body><script src="../build/build.js"></script><script type="text/javascript">
-(function() {
-  var compile, mixin, overlay, view;
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../build/build.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <style>
+      button{
+        position: relative;
+        font-size: 15px;
+        background-color: tomato;
+      }
+      button.right{
+        float: right;
+      }
+    </style>
+    <script src="../build/build.js"></script>
+    <script>
+      var mixin = require('ember-overlay')
+        , compile = Em.Handlebars.compile
+        , overlay = Em.View.extend({
+          template: compile('Thanks')
+        });
+        
+      Em.View.createWithMixins(mixin, {
+          tagName: 'button'
+      , template: compile('click me')
+        , overlay: overlay
+      }).appendTo('body');
 
-  mixin = require('ember-overlay');
-
-  compile = Em.Handlebars.compile;
-
-  overlay = Em.View.extend({
-    template: compile('ت')
-  });
-
-  view = Em.View.createWithMixins(mixin, {
-    tagName: 'button',
-    template: compile('click me'),
-    overlay: overlay
-  });
-
-  view.appendTo('body');
-
-}).call(this);
-</script></body></html>
+      Em.View.createWithMixins(mixin, {
+            floatsTo: 'right'
+          , tagName: 'button'
+          , classNames: ['right']
+      , template: compile('click me')
+        , overlay: overlay
+      }).appendTo('body');
+    </script>
+  </body>
+</html>

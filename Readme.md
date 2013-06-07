@@ -1,23 +1,37 @@
-![](https://dl.dropbox.com/u/30162278/ember-overlay.png) 
+![](https://dl.dropbox.com/u/30162278/ember-overlay-left.png)
+
+![](https://dl.dropbox.com/u/30162278/ember-overlay-right.png)
+
+
+Install
+---
+
+    $ component install kelonye/ember-overlay
 
 Usage
-----------
-
-See [demo](http://kelonye.github.com/ember-overlay/example/index.html)
+---
 
 javascript
 
 ```
-# view to be created as overlay
-App.OverlayView = Em.View.extend()
+// view to be created as overlay
+OverlayView = Em.View.extend({
+  template: Em.Handlebars.compile('Hello!'),
+  click: function(e){
+    // do stuff
+  }
+});
 
-# view to handle mouse click event
-App.View = Em.View require("ember-overlay"),
-  # specify the overlay view
-  overlay: App.OverlayView
+// view to handle mouse click event
+Em.View.createWithMixins(require('ember-overlay'), {
+  // floats to
+  'floatsTo': 'right',
+  // specify the overlay view
+  overlay: OverlayView
+}).appendTo('body');
 ```
 
 License
--------------
+---
 
 MIT

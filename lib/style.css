@@ -1,3 +1,18 @@
-.component.overlay{position:absolute;margin-top:10px;padding:20px;display:inline-block;border:1px solid #eee;background:#fff;z-index:1000;-webkit-transition:opacity 300ms;-moz-transition:opacity 300ms;-o-transition:opacity 300ms;-ms-transition:opacity 300ms;transition:opacity 300ms;}
-.component.overlay .close{position:absolute;top:3px;right:10px;color:#000;font-size:13px;cursor:pointer}
+.component.overlay {
+  position: absolute;
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid #eee;
+  background: #fff;
+  z-index: 1000;
+  transition: opacity 300ms;
+}
+.component.overlay .close {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: #000;
+  font-size: 13px;
+  cursor: pointer;
+}
 
