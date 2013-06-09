@@ -25,7 +25,7 @@ OverlayView = Em.View.extend({
 // view to handle mouse click event
 Em.View.createWithMixins(require('ember-overlay'), {
   // floats to
-  'floatsTo': 'right',
+  floatsTo: 'right',
   // specify the overlay view
   overlay: OverlayView
 }).appendTo('body');
