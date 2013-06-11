@@ -1,4 +1,4 @@
-all: node_modules components build
+all: node_modules components public
 
 node_modules:
 	@npm install
@@ -6,10 +6,10 @@ node_modules:
 components:
 	@component install --dev
 
-build: lib/index.js lib/style.css
-	@component build --dev
+public: lib/index.js lib/style.css
+	@component build --dev -n $@ -o $@
 
 clean:
-	@rm -rf build
+	@rm -rf public
 
 .PHONY: clean

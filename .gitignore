@@ -3,3 +3,4 @@ syntax: glob
 node_modules
 npm-debug.log
 components
+public
