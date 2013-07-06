@@ -11,9 +11,8 @@ Install
 Usage
 ---
 
-javascript
 
-```
+```javascript
 // view to be created as overlay
 OverlayView = Em.View.extend({
   template: Em.Handlebars.compile('Hello!'),
