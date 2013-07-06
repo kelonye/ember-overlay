@@ -31,6 +31,11 @@ Em.View.createWithMixins(require('ember-overlay'), {
 }).appendTo('body');
 ```
 
+Example
+---
+
+    $ make example
+
 License
 ---
 

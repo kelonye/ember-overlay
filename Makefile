@@ -1,4 +1,4 @@
-all: node_modules components public
+default: node_modules components public
 
 node_modules:
 	@npm install
@@ -9,7 +9,10 @@ components:
 public: lib/index.js lib/style.css
 	@component build --dev -n $@ -o $@
 
+example:
+	@xdg-open example/index.html
+
 clean:
 	@rm -rf public
 
-.PHONY: clean
+.PHONY: clean example
