@@ -1,6 +1,4 @@
-![](https://dl.dropbox.com/u/30162278/ember-overlay-left.png)
-
-![](https://dl.dropbox.com/u/30162278/ember-overlay-right.png)
+![](https://dl.dropbox.com/u/30162278/ember-overlay.png)
 
 
 Install
