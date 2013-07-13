@@ -8,8 +8,8 @@
   "development": {
     "kelonye/flat.css": "*"
   },
+  "main": "lib/index.js",
   "scripts": [
-    "index.js",
     "lib/index.js"
   ],
   "styles": [
