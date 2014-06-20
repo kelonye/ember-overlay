@@ -8,7 +8,6 @@
       button{
         position: relative;
         font-size: 15px;
-        background-color: rgba(46, 160, 24, 1);
       }
       button.right{
         float: right;
@@ -24,6 +23,7 @@
         
       Em.View.createWithMixins(mixin, {
           tagName: 'button'
+        , classNames: ['white']
         , template: compile('click me')
         , overlay: overlay
       }).appendTo('body');
@@ -31,7 +31,7 @@
       Em.View.createWithMixins(mixin, {
           floatsTo: 'right'
         , tagName: 'button'
-        , classNames: ['right']
+        , classNames: ['right white']
         , template: compile('click me')
         , overlay: overlay
       }).appendTo('body');
