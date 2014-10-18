@@ -1,9 +1,9 @@
 {
   "name": "ember-overlay",
-  "version": "0.0.2",
+  "version": "0.0.2=3",
   "license": "MIT",
   "dependencies": {
-    "kelonye/ember": "1.2.0"
+    "kelonye/ember": "1.7.0"
   },
   "development": {
     "kelonye/flat.css": "*"

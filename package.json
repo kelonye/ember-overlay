@@ -2,6 +2,6 @@
   "name": "ember-overlay",
   "private": true,
   "devDependencies": {
-    "component-hooks": "0.2.2"
+    "component-hooks": "0.2.5"
   }
 }
